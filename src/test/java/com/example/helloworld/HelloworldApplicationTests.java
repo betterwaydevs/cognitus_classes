@@ -23,4 +23,11 @@ class HelloworldApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello World!"));
     }
+
+    @Test
+    void shouldReturnHelloWorldOnHelloEndpoint() throws Exception {
+        mockMvc.perform(get("/hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello World"));
+    }
 }
