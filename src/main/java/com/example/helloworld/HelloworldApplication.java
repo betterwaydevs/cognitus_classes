@@ -19,7 +19,7 @@ public class HelloworldApplication {
     }
 
     @GetMapping("/hello")
-    public String helloWorld() {
-        return "Hello World";
+    public String helloWorld(String name) {
+        return "Hello " + name.toLowerCase();
     }
 }
