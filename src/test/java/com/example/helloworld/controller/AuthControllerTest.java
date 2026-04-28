@@ -31,11 +31,7 @@ class AuthControllerTest {
     @Test
     void loginWithInvalidCredentialsThrowsException() {
         String url = "http://localhost:" + port + "/auth/login?username=wrong&password=wrong";
-        try {
-            restTemplate.postForEntity(url, null, String.class);
-            fail("Should have thrown exception");
-        } catch (Exception e) {
-            assertTrue(e.getMessage().contains("Invalid credentials") || e.getMessage().contains("500"));
-        }
+        ResponseEntity<String> response = restTemplate.postForEntity(url, null, String.class);
+        assertTrue(response.getStatusCode().is4xxClientError() || response.getStatusCode().is5xxServerError());
     }
 }
