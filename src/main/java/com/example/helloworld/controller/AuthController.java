@@ -1,11 +1,11 @@
 package com.example.helloworld.controller;
 
-import org.springframework.web.bind.annotation.*;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import java.security.Key;
 import java.util.Date;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
