@@ -20,6 +20,9 @@ public class HelloworldApplication {
 
     @GetMapping("/hello")
     public String helloWorld(String name) {
+        if (name == null) {
+            return "Hello World";
+        }
         return "Hello " + name.toLowerCase();
     }
 }
