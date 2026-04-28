@@ -75,4 +75,4 @@ jobs:
 
     steps:
       - name: Deploy notification
-        run: echo "Image pushed to GHCR. Deploy to Render from: ghcr.io/${{ github.repository }}:latest"
+        run: echo "Image pushed to GHCR. Deploy to Render from: ghcr.io/${ { github.repository } }:latest"
